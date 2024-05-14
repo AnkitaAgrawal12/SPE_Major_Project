@@ -1,0 +1,693 @@
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "",
+  "email": "",
+  "password": ""
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "",
+  "email": "",
+  "password": ""
+}
+
+###
+
+GET http://localhost:9595/api/users/viewProfile/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 74
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Aryan",
+  "email": "aryan@gmail.com",
+  "password": "hello"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 74
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Aryan",
+  "email": "aryan@gmail.com",
+  "password": "hello"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 74
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Aryan",
+  "email": "aryan@gmail.com",
+  "password": "hello"
+}
+
+###
+
+GET http://localhost:9595/api/users/viewProfile/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 74
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Aryan",
+  "email": "aryan@gmail.com",
+  "password": "hello"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Ankita",
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty123"
+}
+
+<> 2024-04-28T100001.200.json
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 35
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "",
+  "password": ""
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+<> 2024-04-28T095257.200.json
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+<> 2024-04-28T094658.200.json
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+<> 2024-04-28T072519.200.json
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+<> 2024-04-27T195428.200.json
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+GET http://localhost:9595/api/users/viewProfile/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:9595/api/users/viewProfile/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+<> 2024-04-27T190139.200.json
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Sejal",
+  "email": "sejal28@gmail.com",
+  "password": "asdfg"
+}
+
+###
+
+POST http://localhost:9595/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Ankita",
+  "email": "ankitaagrawal141413@gmail.com",
+  "password": "qwerty123"
+}
+
+###
+
