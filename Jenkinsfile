@@ -23,15 +23,14 @@ pipeline {
               }
            }
         }
-       stage('Push Docker Images') {
+      stage('Push Docker Images') {
        steps {
-        script {
+         script {
             docker.withRegistry('', 'DockerHubCred') {
-                sh 'docker tag demo-frontend ankitaagrawal12/demo-frontend:latest'
-                sh 'docker push ankitaagrawal12/demo-frontend'
+                sh 'docker push ankitaagrawal12/demo-frontend:latest'
               }
            }
-         }
-      }   
+        }
+      }
    }
 }
