@@ -16,7 +16,7 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 dir('./FRONTEND') {
-                    sh 'docker build -t ankitaagrawal12/prosepetals-frontend .'
+                    sh 'docker build -t ankitaagrawal12/demo-frontend .'
                 }
             }
         }
