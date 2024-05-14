@@ -14,7 +14,6 @@
 	<name>security </name>
 	<description>jwt security </description>
 	<properties>
-		<maven.compiler.release>17</maven.compiler.release>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -105,6 +104,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.9.0</version>
+				<configuration>
+					<release>17</release>
+				</configuration>
+			</plugin>
+
+
 		</plugins>
 	</build>
 
