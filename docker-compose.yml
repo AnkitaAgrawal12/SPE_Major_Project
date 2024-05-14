@@ -11,8 +11,8 @@ services:
       test: [ "CMD","ls" ]
     container_name: database-container
     environment:
-      MYSQL_ROOT_PASSWORD: sejal
-      MYSQL_DATABASE: blog_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pp_db
     volumes:
       - database-volume:/var/lib/mysql
     networks:
@@ -23,9 +23,9 @@ services:
     ports:
       - "9595:9595"
     environment:
-      MYSQL_URL: jdbc:mysql://mydb:3306/blog_db?createDatabaseIfNotExist=true
-      MYSQL_USERNAME: sejal
-      MYSQL_PASSWORD: sejal
+      MYSQL_URL: jdbc:mysql://mydb:3306/pp_db?createDatabaseIfNotExist=true
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
     volumes:
       - logs:/logs
     networks:
