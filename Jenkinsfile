@@ -13,12 +13,15 @@ pipeline {
             }
          }
        }
-        stage('Build Docker Images') {
+        stage('Build Docker Images') {	
             steps {
-                dir('./FRONTEND') {
-                    sh 'docker build -t ankitaagrawal12/demo-frontend .'
+               script {
+                 dir('./FRONTEND') {
+                 // Build Docker image
+                 docker.build("ankitaagrawal12/demo-frontend", '.')
                 }
-            }
+              }
+           }
         }
         stage('Push Docker Images') {
             steps {
