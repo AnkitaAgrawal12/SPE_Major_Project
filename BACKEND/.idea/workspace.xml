@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3a640c0-1fe3-42cc-b0f4-4eed8c66e8a2" name="Changes" comment="" />
+    <list default="true" id="a3a640c0-1fe3-42cc-b0f4-4eed8c66e8a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abaa66a5-82bc-43fb-b48a-b3d5f737ee42/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abaa66a5-82bc-43fb-b48a-b3d5f737ee42/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProsePetal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProsePetal/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +68,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "settings.sync",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -80,12 +85,9 @@
       <recent name="com.example.ProsePetal.Payloads" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProsePetalApplication">
-    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="ProsePetalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-21.0.1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="security" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ProsePetal.ProsePetalApplication" />
@@ -93,15 +95,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="HTTP Request.All in generated-requests" />
-      <item itemvalue="Spring Boot.ProsePetalApplication" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="HTTP Request.All in generated-requests" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -134,6 +127,8 @@
       <workItem from="1714223183707" duration="4705000" />
       <workItem from="1714268839310" duration="10563000" />
       <workItem from="1715456015660" duration="382000" />
+      <workItem from="1715707089805" duration="12000" />
+      <workItem from="1715707829433" duration="575000" />
     </task>
     <servers />
   </component>
