@@ -28,8 +28,8 @@ pipeline {
        steps {
          script {
             docker.withRegistry('', 'DockerHubCred') {
-                sh 'docker push ankitaagrawal12/demo-frontend:latest'
-		sh 'docker push ankitaagrawal12/demo-backend:latest'
+                sh 'docker push ankitaagrawal12/prosepetals-frontend:latest'
+		sh 'docker push ankitaagrawal12/prosepetals-backend:latest'
               }
            }
         }
