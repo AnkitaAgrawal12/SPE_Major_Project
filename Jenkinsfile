@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+	DOCKERHUB_CREDENTIALS=credentials('docker-jenkins')    
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
      }
      stages{
