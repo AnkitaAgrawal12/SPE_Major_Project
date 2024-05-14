@@ -19,6 +19,17 @@ pipeline {
             }
          }
        }
+        stage('Maven Build') {
+            steps {
+                dir('./BACKEND') {
+                    sh 'mvn clean install'
+                }
+                dir('./FRONTEND') {
+                    sh 'npm install'
+                    sh 'npm start'
+                }
+            }
+        }
         stage('Build Docker Images') {
             steps {
                 dir('./BACKEND') {
