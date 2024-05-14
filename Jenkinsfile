@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-	DOCKER_IMAGE_NAME = 'demo-frontend'  
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
      }
      stages{
@@ -16,9 +15,11 @@ pipeline {
         stage('Build Docker Images') {	
             steps {
                script {
+		dir('./BACKEND') {
+		docker.build("ankitaagrawal12/prosepetals-backend", '.')
+                }
                  dir('./FRONTEND') {
-                 // Build Docker image
-                 docker.build("ankitaagrawal12/demo-frontend", '.')
+                 docker.build("ankitaagrawal12/prosepetals-frontend", '.')
                 }
               }
            }
@@ -28,6 +29,7 @@ pipeline {
          script {
             docker.withRegistry('', 'DockerHubCred') {
                 sh 'docker push ankitaagrawal12/demo-frontend:latest'
+		sh 'docker push ankitaagrawal12/demo-backend:latest'
               }
            }
         }
