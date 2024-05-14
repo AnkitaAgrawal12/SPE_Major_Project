@@ -1,7 +1,8 @@
 ---
 - name: Deploy Docker Compose stack
   hosts: localhost
-  become: true
+  remote_user: ankita
+  become: false
 
   tasks:
     - name: Install Docker Compose
