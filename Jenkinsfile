@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Images') {	
             steps {
                script {
-		dir('./BACKEND') {
+		dir('./BACKEND/ProsePetal') {
 		docker.build("ankitaagrawal12/prosepetals-backend", '.')
                 }
                  dir('./FRONTEND') {
