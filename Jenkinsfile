@@ -8,7 +8,7 @@ pipeline {
         stage('Cleanup') {
             steps {
                 script{   
-                sh 'docker rm -f prosepetals-backend'
+                sh 'docker rm -f prosepetals-frontend'
                 }
             }
         }
@@ -32,9 +32,6 @@ pipeline {
         }
         stage('Build Docker Images') {
             steps {
-                dir('./BACKEND') {
-                    sh 'docker build -t sejal28/prosepetals-backend .'
-                }
                 dir('./FRONTEND') {
                     sh 'docker build -t sejal28/prosepetals-frontend .'
                 }
