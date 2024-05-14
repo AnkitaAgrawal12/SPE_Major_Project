@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine
+FROM adoptopenjdk/openjdk17:alpine
 COPY target/security-0.0.1-SNAPSHOT.jar ./
 CMD ["java", "-jar", "security-0.0.1-SNAPSHOT.jar"]
 
