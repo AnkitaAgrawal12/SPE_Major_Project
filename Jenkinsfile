@@ -2,17 +2,10 @@ pipeline {
     agent any
 
     environment {
-	DOCKERHUB_CREDENTIALS=credentials('docker-jenkins')    
+	DOCKER_IMAGE_NAME = 'demo-frontend'  
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
      }
      stages{
-        stage('Cleanup') {
-            steps {
-                script{   
-                sh 'docker rm -f prosepetals-frontend'
-                }
-            }
-        }
 	  stage('Checkout'){
 	    steps{
 		script{
@@ -20,20 +13,22 @@ pipeline {
             }
          }
        }
-        stage('Maven Build') {
-            steps {
-                dir('./FRONTEND') {
-                    sh 'npm install'
-                    sh 'npm start'
-                }
-            }
-        }
         stage('Build Docker Images') {
             steps {
                 dir('./FRONTEND') {
-                    sh 'docker build -t sejal28/prosepetals-frontend .'
+                    sh 'docker build -t ankitaagrawal12/prosepetals-frontend .'
                 }
             }
         }
+        stage('Push Docker Images') {
+            steps {
+                 script{
+                    docker.withRegistry('', 'DockerHubCred') {
+                    sh 'docker tag demo-frontend ankitaagrawal12/demo-frontend:latest'
+                    sh 'docker push ankitaagrawal12/demo-frontned'
+                    }
+                 }
+            }
+        }     
      }
 }
