@@ -5,6 +5,15 @@ pipeline {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
      }
      stages{
+	stage('Cleanup') {
+            steps {
+                script{   
+                sh 'docker rm -f prosepetals-frontend'
+		sh 'docker rm -f prosepetals-backend'
+                }
+            }
+        }
+
 	  stage('Checkout'){
 	    steps{
 		script{
