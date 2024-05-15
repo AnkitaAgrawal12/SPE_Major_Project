@@ -1,6 +1,6 @@
 import './App.css';
 import BlogPage from './Pages/BlogPage';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import SignUp from './Pages/SignUp';
 import ShotsPage from './Pages/ShotsPage';
 import LoginPage from './Pages/LoginPage';
@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <Router>
       <Routes>
+      <Route path = "/" element={<Navigate to='/login' exact /> }/>
       <Route exact path='/login' element={<LoginPage/>} />
       <Route exact path='/homepage' element={<HomePage/>} />
       <Route exact path='/newpost' element={<NewPost/>} />
