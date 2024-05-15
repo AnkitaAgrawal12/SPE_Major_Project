@@ -21,13 +21,24 @@ pipeline {
             }
          }
        }
-	stage('Maven Build') {
-            steps {
-                dir('./BACKEND/ProsePetal') {
-                    sh 'mvn clean install'
-                }
-            }
+	// stage('Maven Build') {
+ //            steps {
+ //                dir('./BACKEND/ProsePetal') {
+ //                    sh 'mvn clean install'
+ //                }
+ //            }
+ //        }
+	     stage('Maven Build') {
+    environment {
+        MVN_HOME = tool 'mvn' // Specify the name of the Maven installation configured in Jenkins
+    }
+    steps {
+        dir('./BACKEND/ProsePetal') {
+            sh "${MVN_HOME}/bin/mvn clean install" // Use the Maven executable path obtained from the environment variable
         }
+    }
+}
+
         stage('Build Docker Images') {	
             steps {
                script {
