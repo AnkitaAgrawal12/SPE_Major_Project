@@ -3,16 +3,17 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
+	MVN_HOME = tool 'mvn' 
      }
      stages{
-	// stage('Cleanup') {
- //            steps {
- //                script{   
- //                sh 'docker rm -f prosepetals-frontend'
-	// 	sh 'docker rm -f prosepetals-backend'
- //                }
- //            }
- //        }
+	stage('Cleanup') {
+            steps {
+                script{   
+                sh 'docker rm -f prosepetals-frontend'
+		sh 'docker rm -f prosepetals-backend'
+                }
+            }
+        }
 
 	  stage('Checkout'){
 	    steps{
@@ -21,23 +22,14 @@ pipeline {
             }
          }
        }
-	// stage('Maven Build') {
- //            steps {
- //                dir('./BACKEND/ProsePetal') {
- //                    sh 'mvn clean install'
- //                }
- //            }
- //        }
-	     stage('Maven Build') {
-    environment {
-        MVN_HOME = tool 'mvn' // Specify the name of the Maven installation configured in Jenkins
-    }
-    steps {
-        dir('./BACKEND/ProsePetal') {
-            sh "${MVN_HOME}/bin/mvn clean install" // Use the Maven executable path obtained from the environment variable
+
+	  stage('Maven Build') {
+             steps {
+             dir('./BACKEND/ProsePetal') {
+                  sh "${MVN_HOME}/bin/mvn clean install" 
+               }
+            }
         }
-    }
-}
 
         stage('Build Docker Images') {	
             steps {
