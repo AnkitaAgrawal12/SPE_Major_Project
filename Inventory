@@ -1,2 +1,2 @@
 [myhosts]
-192.168.7.92 ansible_user=ankitaagrawal12 ansible_ssh_pass=ankita
+192.168.7.92 ansible_user=ankitaagrawal12 ansible_sudo_pass='ankita'
