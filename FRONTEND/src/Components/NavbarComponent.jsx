@@ -22,7 +22,7 @@ function NavbarComponent() {
           <Nav className="ms-auto">
             <Nav.Link href="/homepage">HOME</Nav.Link>
             <Nav.Link className="nav-link" href="/articlepage">ARTICLES</Nav.Link>
-            <Nav.Link eventKey={3} href="/aboutpage">ABOUT</Nav.Link>
+            <Nav.Link eventKey={3} href="/profilepage">ABOUT</Nav.Link>
             <Nav.Link eventKey={4} href="/contactpage">CONTACT US</Nav.Link>
             <Nav.Link onClick={handleLogout}>LOGOUT</Nav.Link>
           </Nav>

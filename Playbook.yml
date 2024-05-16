@@ -1,7 +1,8 @@
 ---
 - name: Deploy Docker Compose stack
-  hosts: all
-  become: true
+  hosts: localhost
+  remote_user: ankita
+  become: false
 
   tasks:
     - name: Install Docker Compose
@@ -22,17 +23,18 @@
     - name: Copy Docker Compose file to host
       copy:
         src: /var/lib/jenkins/workspace/SPE_majorproject/docker-compose.yml
-        dest: ./docker-compose.yml
+        dest: /opt/docker-compose.yml
 
     - name: Start Docker Compose stack
       command: docker-compose up -d
       args:
-        chdir: ./
+        chdir: /opt/
 
-    # - name: Remove previous image with 'none' tag
-    #   shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
-    #   delegate_to: localhost
+    - name: Remove previous image with 'none' tag
+      shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
+      delegate_to: localhost
 
-    # - name: Remove previous image with 'none' tag on remoteserver
-    #   shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
-    #   delegate_to: remoteserver
+    - name: Remove previous image with 'none' tag on remoteserver
+      shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
+      delegate_to: remoteserver
+

@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService {
     Object getprofiledetails(Integer userId);
+
+    Object getUserById(long l);
 }

@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3a640c0-1fe3-42cc-b0f4-4eed8c66e8a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ProsePetal/target/security-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ProsePetal/target/security-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProsePetal/target/security-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/ProsePetal/target/security-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProsePetal/target/surefire-reports/TEST-com.example.ProsePetal.ProsePetalApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProsePetal/target/surefire-reports/TEST-com.example.ProsePetal.ProsePetalApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProsePetal/target/surefire-reports/com.example.ProsePetal.ProsePetalApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProsePetal/target/surefire-reports/com.example.ProsePetal.ProsePetalApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProsePetal/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Exceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Payloads/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/ProsePetalApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Repositories/UserRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/java/com/example/ProsePetal/Services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/ProsePetal/src/test/java/com/example/ProsePetal/ProsePetalApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/major_project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LC with axios" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,8 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Kotlin Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -132,6 +150,13 @@
       <workItem from="1715709425224" duration="153000" />
       <workItem from="1715738025102" duration="413000" />
       <workItem from="1715738698055" duration="297000" />
+      <workItem from="1715744900410" duration="1847000" />
+      <workItem from="1715748990184" duration="720000" />
+      <workItem from="1715769641095" duration="5127000" />
+      <workItem from="1715778899893" duration="2243000" />
+      <workItem from="1715830130887" duration="2674000" />
+      <workItem from="1715834908013" duration="1655000" />
+      <workItem from="1715837081542" duration="1479000" />
     </task>
     <servers />
   </component>

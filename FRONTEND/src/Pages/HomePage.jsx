@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavbarComponent from '../Components/NavbarComponent';
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import slide from '../Images/Carousel/8.png'; // Import your image
+import slide from '../Images/Carousel/1.jpg'; // Import your image
 import Footer from '../Components/Footer';
 
 const HomePage = () => {
@@ -20,10 +20,7 @@ const HomePage = () => {
           <Carousel.Item>
             <img src={slide} alt="img1" style={{ width: "100%", height: "65vh", objectFit: "cover" }} />
           </Carousel.Item>
-          {/* Add more Carousel.Items if needed */}
         </Carousel>
-
-        {/* Card Section */}
         <Container style={{ marginTop: '120px', marginBottom: '120px'}}>
           <Row xs={1} md={4} className="g-4">
             {Array.from({ length: 8 }).map((_, idx) => (

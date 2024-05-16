@@ -18,8 +18,6 @@ public class UserController {
     private PostService postService;
     private UserService userService;
 
-
-
     @GetMapping("/viewProfile/{userId}")
     public ResponseEntity<UserDTO> profiledetails(@PathVariable("userId") Integer userId)
     {

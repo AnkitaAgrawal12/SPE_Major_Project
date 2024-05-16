@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import profile from '../Images/profile.jpg'; // Corrected import statement
+import profile from '../Images/profile.jpg';
 import NavbarComponent from '../Components/NavbarComponent';
 import Footer from '../Components/Footer';
+import axios from 'axios';
 
 export default function ProfilePage() {
   // State variables for profile information
-  const [name, setName] = useState('John Doe');
-  const [email, setEmail] = useState('john@example.com');
-  const [password, setPassword] = useState('********');
-  const [about, setAbout] = useState('I am a blogger sharing my thoughts and experiences.');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [about, setAbout] = useState('');
   const [editableAbout, setEditableAbout] = useState(false);
 
   // Function to handle changing the about section
@@ -22,6 +23,21 @@ export default function ProfilePage() {
     // Here you can add code to save the changed about section to the backend
     setEditableAbout(true); // Disable editing mode
   };
+
+  useEffect(() => {
+    // Fetch profile data from the backend when the component mounts
+    axios.get('your_backend_api_url/profile')
+      .then(response => {
+        const { name, email, password, about } = response.data;
+        setName(name);
+        setEmail(email);
+        setPassword(password);
+        setAbout(about);
+      })
+      .catch(error => {
+        console.error('Error fetching profile data:', error);
+      });
+  }, []); // Empty dependency array to run effect only once when component mounts
 
   return (
     <div className='profile-page'>

@@ -38,4 +38,5 @@ public class Post {
     @JoinColumn(name = "user_Id", referencedColumnName = "user_Id")
     @NotNull
     private User user;
+
 }
