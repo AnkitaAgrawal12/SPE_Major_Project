@@ -9,7 +9,7 @@ services:
     image: mysql:latest
     healthcheck:
       test: [ "CMD","ls" ]
-    container_name: database-container
+    container_name: database-container-pp
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: pp_db
