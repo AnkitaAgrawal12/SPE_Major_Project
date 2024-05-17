@@ -30,13 +30,6 @@ pipeline {
             }
           }
         }
-	stage('Maven Build') {
-            steps {
-                dir('./BACKEND/ProsePetal') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
         stage('Build Docker Images') {	
             steps {
                script {
