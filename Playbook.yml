@@ -23,12 +23,12 @@
     - name: Copy Docker Compose file to host
       copy:
         src: /var/lib/jenkins/workspace/SPE_majorproject/docker-compose.yml
-        dest: /opt/docker-compose.yml
+        dest: ./docker-compose.yml
 
     - name: Start Docker Compose stack
       command: docker-compose up -d
       args:
-        chdir: /opt/
+        chdir: ./
 
     - name: Remove previous image with 'none' tag
       shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
