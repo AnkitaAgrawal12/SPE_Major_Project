@@ -8,6 +8,8 @@ import MainPage from './Pages/MainPage';
 import HomePage from './Pages/HomePage';
 import NewPost from './Pages/NewPost';
 import ContactPage from './Pages/ContactPage';
+import Edit from './Pages/Edit'
+import ArticlePage from './Pages/ArticlePage';
 
 function App() {
   
@@ -22,8 +24,11 @@ function App() {
       <Route exact path='/blogpage' element={<BlogPage/>} />
       <Route exact path='/signup' element={<SignUp/>} />
       <Route exact path='/mainpage' element={<MainPage/>} />
+      <Route exact path='/articlepage' element={<ArticlePage/>}/>
       <Route exact path='/profilepage' element={<ProfilePage/>} />
       <Route exact path='/contactpage' element={<ContactPage/>} />
+      <Route exact path='/view/:postId' element={<BlogPage/>} />
+      <Route exact path='/updatepost/:postId' element={<Edit/>}/>
       </Routes>
       </Router>
       </div>

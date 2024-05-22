@@ -1,3 +1,5 @@
+
+
 package com.example.ProsePetal.Payloads;
 
 import lombok.AllArgsConstructor;
@@ -12,9 +14,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PostDTO {
+    private Integer postId;
     private String title;
     private String content;
     private String imageName;
     private Date createdDate;
-    private UserDTO user;
+    private MinUserDTO user;
 }

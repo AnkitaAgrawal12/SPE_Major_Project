@@ -1,6 +1,5 @@
 package com.example.ProsePetal.Services;
 
-import com.example.ProsePetal.Entity.Post;
 import com.example.ProsePetal.Payloads.PostDTO;
 import org.springframework.stereotype.Service;
 
@@ -29,4 +28,6 @@ public interface PostService {
 
     // Search posts (consider using advanced search features)
     List<PostDTO> searchPosts(String keyword);
+
+
 }

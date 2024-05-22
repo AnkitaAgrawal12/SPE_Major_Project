@@ -51,15 +51,28 @@ public class PostController {
         }
     }
 
+    @PutMapping("/user/update/{postId}")
+    public ResponseEntity<PostDTO> updatePost(@RequestBody PostDTO postDTO, @PathVariable("postId") Integer postId, HttpServletRequest request) {
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        }
 
-
-    @PutMapping("/user/{userId}/update/{postId}")
-    public ResponseEntity<PostDTO> updatePost(@RequestBody PostDTO postDTO, @PathVariable("postId") Integer postId, @PathVariable("userId") Integer userId) {
-        PostDTO updatedPost = postService.updatePost(postDTO, postId);
-        return new ResponseEntity<>(updatedPost, HttpStatus.OK);
+        String jwtToken = authorizationHeader.substring(7); // Remove "Bearer " prefix
+        try {
+            String userEmail = jwtService.extractUsername(jwtToken);
+            Integer extractedUserId = userRepo.findUserIdByEmail(userEmail);
+            if (extractedUserId == null) {
+                throw new ResourceNotFoundException("User", "email", extractedUserId);
+            }
+            PostDTO updatedPost = postService.updatePost(postDTO, postId);
+            return new ResponseEntity<>(updatedPost, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    @DeleteMapping("/user/{userId}/delete/{postId}")
+    @DeleteMapping("/user/delete/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable("postId") Integer postId) {
         postService.deletePost(postId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -88,9 +101,30 @@ public class PostController {
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
-    @GetMapping("/user/{userId}/posts/{postId}")
-    public ResponseEntity<PostDTO> getPostById(@PathVariable("postId") Integer postId, @PathVariable("userId") Integer userId) {
-        PostDTO post = postService.getPostById(postId).orElse(null);
-        return new ResponseEntity<>(post, post != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+    @GetMapping("/user/{postId}")
+    public ResponseEntity<PostDTO> getPostById(@PathVariable("postId") Integer postId, HttpServletRequest request) {
+        // Extract JWT token from the Authorization header
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        }
+
+        String jwtToken = authorizationHeader.substring(7); // Remove "Bearer " prefix
+        try {
+            String userEmail = jwtService.extractUsername(jwtToken);
+            Integer extractedUserId = userRepo.findUserIdByEmail(userEmail);
+
+            if (extractedUserId == null) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
+            }
+            PostDTO post = postService.getPostById(postId).orElse(null);
+            if (post != null && post.getUser().getUserId().equals(extractedUserId)) {
+                return new ResponseEntity<>(post, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 }
