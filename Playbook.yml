@@ -2,13 +2,14 @@
 - name: Deploy Docker Compose stack
   hosts: localhost
   remote_user: ankita
-  become: false
+  become: true
 
   tasks:
-    - name: Install Docker Compose
+    - name: Ensure Docker Compose is installed
       apt:
         name: docker-compose
         state: present
+        update_cache: yes
 
     - name: Pull Backend Image
       docker_image:
@@ -23,18 +24,23 @@
     - name: Copy Docker Compose file to host
       copy:
         src: /var/lib/jenkins/workspace/SPE_majorproject/docker-compose.yml
-        dest: ./docker-compose.yml
+        dest: /home/ankita/docker-compose.yml
+        owner: ankita
+        group: ankita
+        mode: '0644'
 
     - name: Start Docker Compose stack
       command: docker-compose up -d
       args:
-        chdir: ./
+        chdir: /home/ankita
 
-    # - name: Remove previous image with 'none' tag
-    #   shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
-    #   delegate_to: localhost
+    - name: Clean up dangling Docker images on localhost
+      shell: |
+        docker images -f "dangling=true" -q | xargs --no-run-if-empty docker rmi
+      ignore_errors: yes
 
-    # - name: Remove previous image with 'none' tag on remoteserver
-    #   shell: docker rmi $(docker images | grep "none" | awk '{print $3}')
-    #   delegate_to: remoteserver
-
+    - name: Clean up dangling Docker images on remote server
+      shell: |
+        docker images -f "dangling=true" -q | xargs --no-run-if-empty docker rmi
+      delegate_to: remoteserver
+      ignore_errors: yes
