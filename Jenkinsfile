@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
-        ANSIBLE_VAULT_PASSWORD_FILE = '/path/to/vault_password.txt' // Path to the vault password file on the Jenkins server
+        ANSIBLE_VAULT_PASSWORD_FILE = '/home/ankitaagrawal12/SPE/SPE_Major_Project/vault.txt'
     }
 
     stages {
