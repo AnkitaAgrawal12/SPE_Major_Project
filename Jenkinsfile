@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
+        ANSIBLE_VAULT_PASSWORD_FILE = '/path/to/vault_password.txt' // Path to the vault password file on the Jenkins server
     }
-
 
     stages {
         stage('Cleanup') {
@@ -12,7 +12,7 @@ pipeline {
                 script {
                     sh 'docker rm -f prosepetals-frontend || true'
                     sh 'docker rm -f prosepetals-backend || true'
-                    sh 'docler rm -f database-container || true'
+                    sh 'docker rm -f database-container || true'
                 }
             }
         }
@@ -82,3 +82,4 @@ pipeline {
         }
     }
 }
+

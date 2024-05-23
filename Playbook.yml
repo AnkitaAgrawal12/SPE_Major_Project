@@ -3,6 +3,8 @@
   hosts: localhost
   remote_user: ankita
   become: true
+  vars_files:
+    - vault.yml
 
   tasks:
     - name: Ensure Docker Compose is installed
@@ -44,3 +46,4 @@
         docker images -f "dangling=true" -q | xargs --no-run-if-empty docker rmi
       delegate_to: remoteserver
       ignore_errors: yes
+
