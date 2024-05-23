@@ -23,7 +23,7 @@
 
     - name: Copy Docker Compose file to host
       copy:
-        src: /var/lib/jenkins/workspace/SPE_majorproject/docker-compose.yml
+        src: /var/lib/jenkins/workspace/SPE_major_project/docker-compose.yml
         dest: /home/ankita/docker-compose.yml
         owner: ankita
         group: ankita
