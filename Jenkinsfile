@@ -1,20 +1,27 @@
 pipeline {
     agent any
 
-    parameters {
-        string(name: 'GITHUB_REPO_URL', defaultValue: 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git', description: 'URL of the GitHub repository')
+    environment {
+        GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
     }
 
+
     stages {
-        stage('Workspace Cleanup') {
+        stage('Cleanup') {
             steps {
-                cleanWs()
+                script {
+                    sh 'docker rm -f prosepetals-frontend || true'
+                    sh 'docker rm -f prosepetals-backend || true'
+                    sh 'docler rm -f database-container || true'
+                }
             }
         }
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: "${params.GITHUB_REPO_URL}"
+                script {
+                    git branch: 'main', url: "${GITHUB_REPO_URL}"
+                }
             }
         }
 
