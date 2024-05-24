@@ -1,14 +1,9 @@
 pipeline {
     agent any
 
-    parameters {
-        string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Git branch to build')
-    }
-
     environment {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
-        ANSIBLE_VAULT_PASSWORD_FILE = credentials('ANSIBLE_VAULT_PASSWORD_FILE')
-        DOCKER_HUB_CREDENTIALS = 'DockerHubCred'
+        ANSIBLE_VAULT_PASSWORD_FILE = './vault.txt'
     }
 
     stages {
@@ -17,7 +12,7 @@ pipeline {
                 script {
                     sh 'docker rm -f prosepetals-frontend || true'
                     sh 'docker rm -f prosepetals-backend || true'
-                    sh 'docker rm -f database-container-pp || true'
+                    sh 'docker rm -f database-container || true'
                 }
             }
         }
@@ -25,7 +20,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: params.GIT_BRANCH, url: "${GITHUB_REPO_URL}"
+                    git branch: 'main', url: "${GITHUB_REPO_URL}"
                 }
             }
         }
@@ -44,16 +39,12 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 script {
-                    def backendImage = "ankitaagrawal12/prosepetals-backend:${env.BUILD_ID}"
-                    def frontendImage = "ankitaagrawal12/prosepetals-frontend:${env.BUILD_ID}"
                     dir('./BACKEND/ProsePetal') {
-                        docker.build(backendImage, '.')
+                        docker.build("ankitaagrawal12/prosepetals-backend", '.')
                     }
                     dir('./FRONTEND') {
-                        docker.build(frontendImage, '.')
+                        docker.build("ankitaagrawal12/prosepetals-frontend", '.')
                     }
-                    env.BACKEND_IMAGE = backendImage
-                    env.FRONTEND_IMAGE = frontendImage
                 }
             }
         }
@@ -61,9 +52,9 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script {
-                    docker.withRegistry('', DOCKER_HUB_CREDENTIALS) {
-                        sh "docker push ${env.BACKEND_IMAGE}"
-                        sh "docker push ${env.FRONTEND_IMAGE}"
+                    docker.withRegistry('', 'DockerHubCred') {
+                        sh 'docker push ankitaagrawal12/prosepetals-frontend:latest'
+                        sh 'docker push ankitaagrawal12/prosepetals-backend:latest'
                     }
                 }
             }
@@ -73,12 +64,7 @@ pipeline {
             steps {
                 ansiblePlaybook(
                     playbook: 'Playbook.yml',
-                    inventory: 'Inventory',
-                    extraVars: [
-                        backend_image: env.BACKEND_IMAGE,
-                        frontend_image: env.FRONTEND_IMAGE
-                    ],
-                    vaultCredentialsId: 'ANSIBLE_VAULT_PASSWORD_FILE'
+                    inventory: 'Inventory'
                 )
             }
         }
@@ -87,7 +73,6 @@ pipeline {
     post {
         always {
             echo 'Pipeline finished.'
-            cleanWs()
         }
         success {
             echo 'Pipeline succeeded!'
