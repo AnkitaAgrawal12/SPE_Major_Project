@@ -4,7 +4,7 @@
   remote_user: ankita
   become: true
   vars_files:
-    - vault.txt
+    - vault.yml
 
   vars:
     backend_image: ""
