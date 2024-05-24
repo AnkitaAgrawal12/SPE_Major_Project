@@ -25,25 +25,10 @@
 
     - name: Copy Docker Compose file to host
       copy:
-        src: /var/lib/jenkins/workspace/SPE_major_project/docker-compose.yml
-        dest: /home/ankita/docker-compose.yml
-        owner: ankita
-        group: ankita
-        mode: '0644'
+        src: /var/lib/jenkins/workspace/SPE_Major_Project/docker-compose.yml
+        dest: ./docker-compose.yml
 
     - name: Start Docker Compose stack
       command: docker-compose up -d
       args:
-        chdir: /home/ankita
-
-    - name: Clean up dangling Docker images on localhost
-      shell: |
-        docker images -f "dangling=true" -q | xargs --no-run-if-empty docker rmi
-      ignore_errors: yes
-
-    - name: Clean up dangling Docker images on remote server
-      shell: |
-        docker images -f "dangling=true" -q | xargs --no-run-if-empty docker rmi
-      delegate_to: remoteserver
-      ignore_errors: yes
-
+        chdir: ./
