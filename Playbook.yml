@@ -4,7 +4,7 @@
   remote_user: ankita
   become: true
   vars_files:
-    - vault.yml
+    - vault.txt
 
   tasks:
     - name: Ensure Docker Compose is installed
