@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
-        ANSIBLE_VAULT_PASSWORD_FILE = './vault.txt'
+        ANSIBLE_VAULT_PASSWORD_FILE = credentials('ANSIBLE_VAULT_PASSWORD_FILE')
         DOCKER_HUB_CREDENTIALS = 'DockerHubCred'
     }
 
@@ -17,7 +17,7 @@ pipeline {
                 script {
                     sh 'docker rm -f prosepetals-frontend || true'
                     sh 'docker rm -f prosepetals-backend || true'
-                    sh 'docker rm -f database-container || true'
+                    sh 'docker rm -f database-container-pp || true'
                 }
             }
         }
