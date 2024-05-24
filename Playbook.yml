@@ -6,6 +6,10 @@
   vars_files:
     - vault.txt
 
+  vars:
+    backend_image: ""
+    frontend_image: ""
+
   tasks:
     - name: Ensure Docker Compose is installed
       apt:
@@ -15,12 +19,12 @@
 
     - name: Pull Backend Image
       docker_image:
-        name: ankitaagrawal12/prosepetals-backend
+        name: "{{ backend_image }}"
         source: pull
 
     - name: Pull Frontend Image
       docker_image:
-        name: ankitaagrawal12/prosepetals-frontend
+        name: "{{ frontend_image }}"
         source: pull
 
     - name: Copy Docker Compose file to host
