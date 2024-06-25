@@ -3,8 +3,6 @@
   hosts: localhost
   remote_user: ankita
   become: true
-  vars_files:
-    - vault.yml
 
   vars:
     backend_image: ""
