@@ -28,7 +28,7 @@
     - name: Copy Docker Compose file to host
       copy:
         src: /var/lib/jenkins/workspace/SPE_Major_Project/docker-compose.yml
-        dest: ./docker-compose.yml
+        dest: ./
 
     - name: Start Docker Compose stack
       environment:
