@@ -4,36 +4,28 @@
   remote_user: ankita
   become: false
 
-  vars:
-    backend_image: ""
-    frontend_image: ""
-
   tasks:
-    - name: Ensure Docker Compose is installed
+    - name: Install Docker Compose
       apt:
         name: docker-compose
         state: present
-        update_cache: yes
 
     - name: Pull Backend Image
       docker_image:
-        name: "{{ backend_image }}"
+        name: ankitaagrawal12/prosepetals-backend
         source: pull
 
     - name: Pull Frontend Image
       docker_image:
-        name: "{{ frontend_image }}"
+        name: ankitaagrawal12/prosepetals-frontend
         source: pull
 
     - name: Copy Docker Compose file to host
       copy:
-        src: /var/lib/jenkins/workspace/SPE_Major_Project/docker-compose.yml
-        dest: ./
+        src: /var/lib/jenkins/workspace/SPE_majorproject/docker-compose.yml
+        dest: ./docker-compose.yml
 
     - name: Start Docker Compose stack
-      environment:
-        FRONTEND_IMAGE: "{{ frontend_image }}"
-        BACKEND_IMAGE: "{{ backend_image }}"
       command: docker-compose up -d
       args:
         chdir: ./
