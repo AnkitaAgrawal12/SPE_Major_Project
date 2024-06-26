@@ -31,9 +31,9 @@
         dest: ./docker-compose.yml
 
     - name: Start Docker Compose stack
-      environment:
-        FRONTEND_IMAGE: "{{ frontend_image }}"
-        BACKEND_IMAGE: "{{ backend_image }}"
       command: docker-compose up -d
       args:
         chdir: ./
+      environment:
+        BACKEND_IMAGE: "{{ backend_image }}"
+        FRONTEND_IMAGE: "{{ frontend_image }}"
