@@ -8,7 +8,7 @@ services:
   mydb:
     image: mysql:latest
     healthcheck:
-      test: ["CMD", "ls"]
+      test: [ "CMD","ls" ]
     container_name: database-container-pp
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -17,9 +17,8 @@ services:
       - database-volume:/var/lib/mysql
     networks:
       - prosepetals-network
-
   prosepetals-backend:
-    image: ${BACKEND_IMAGE}
+    image: ankitaagrawal12/prosepetals-backend
     container_name: prosepetals-backend
     ports:
       - "9595:9595"
@@ -34,9 +33,8 @@ services:
     depends_on:
       mydb:
         condition: service_healthy
-
   prosepetals-frontend:
-    image: ${FRONTEND_IMAGE}
+    image: ankitaagrawal12/prosepetals-frontend
     container_name: prosepetals-frontend
     stdin_open: true
     ports:
