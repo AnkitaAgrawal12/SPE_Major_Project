@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/AnkitaAgrawal12/SPE_Major_Project.git'
+        MVN_HOME = tool 'mvn'
     }
 
     stages {
@@ -11,7 +12,7 @@ pipeline {
                 script {
                     sh 'docker rm -f prosepetals-frontend || true'
                     sh 'docker rm -f prosepetals-backend || true'
-                    sh 'docker rm -f database-container || true'
+                    sh 'docker rm -f database-container-pp || true'
                 }
             }
         }
@@ -25,9 +26,6 @@ pipeline {
         }
 
         stage('Maven Build') {
-            environment {
-                MVN_HOME = tool 'mvn'
-            }
             steps {
                 dir('./BACKEND/ProsePetal') {
                     sh "${MVN_HOME}/bin/mvn clean install"
@@ -63,7 +61,11 @@ pipeline {
             steps {
                 ansiblePlaybook(
                     playbook: 'Playbook.yml',
-                    inventory: 'Inventory'
+                    inventory: 'Inventory',
+                    extraVars: [
+                        backend_image: 'ankitaagrawal12/prosepetals-backend:latest',
+                        frontend_image: 'ankitaagrawal12/prosepetals-frontend:latest'
+                    ]
                 )
             }
         }
